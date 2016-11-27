@@ -1,0 +1,14 @@
+config:
+  limits.cpu: 9-9
+  user.user-data: |-
+    #cloud-config
+    chpasswd:
+      list: |
+        ubuntu:ubuntu
+      expire: False
+    ssh_pwauth: True
+devices:
+  root:
+    path: /
+    type: disk
+    size: 30GB
